@@ -18,7 +18,8 @@ public class ImageCapture : MonoBehaviour
     /// Actual camera instance.
     /// </summary>
     private PhotoCapture capture;
-    Texture2D targetTexture = null;
+    private Texture2D targetTexture = null;
+    public GameObject quad;
 
     /// <summary>
     /// True, if the camera is ready to take photos.
@@ -92,7 +93,7 @@ public class ImageCapture : MonoBehaviour
             currentImagePath = System.IO.Path.Combine(Application.persistentDataPath, file);
 
             capture.TakePhotoAsync(currentImagePath, PhotoCaptureFileOutputFormat.JPG, OnCapturedPhotoToDisk);
-            //capture.TakePhotoAsync(OnCapturedPhotoToTexture);
+            capture.TakePhotoAsync(OnCapturedPhotoToTexture);
         }
         else
         {
@@ -117,13 +118,12 @@ public class ImageCapture : MonoBehaviour
         photoCaptureFrame.UploadImageDataToTexture(targetTexture);
 
         // Create a gameobject that we can apply our texture to
-        GameObject quad = GameObject.CreatePrimitive(PrimitiveType.Quad);
+        //GameObject quad = GameObject.CreatePrimitive(PrimitiveType.Quad);
         Renderer quadRenderer = quad.GetComponent<Renderer>() as Renderer;
-        quadRenderer.material = new Material(Shader.Find("UnlitShader"));
+        //quadRenderer.material = new Material(Shader.Find("UnlitShader"));
 
-        quad.transform.parent = this.transform;
-        quad.transform.localPosition = new Vector3(0.0f, 0.0f, 3.0f);
-
+        //quad.transform.parent = this.transform;
+        //quad.transform.localPosition = new Vector3(0.0f, 0.0f, 3.0f);
         quadRenderer.material.SetTexture("_MainTex", targetTexture);
     }
     private void OnCapturedPhotoToDisk(PhotoCapture.PhotoCaptureResult result)

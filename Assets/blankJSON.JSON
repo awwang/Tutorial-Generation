@@ -1,0 +1,66 @@
+{
+  "JuxtopiaTask": {
+    "Version": 1.1,
+    "Name": "",
+    "ResourcesPath": "project/",
+    "Steps": [
+      {
+        "Name": "",
+        "Version": 1.1,
+        "Duration": 0,
+        "FeatureAnchoredObjects": [
+          {
+            "Image_Path": "",
+            "Position": [
+              0,
+              0,
+              0
+            ],
+            "AnimationPath": [],
+            "MarkerName": ""
+          }
+        ],
+        "DisplayAnchoredImage": [
+          {
+            "Image_Path": "",
+            "Position": [
+              0,
+              0,
+              0
+            ],
+            "AnimationPath": [
+              {
+                "Position": [
+                  0,
+                  0,
+                  0
+                ],
+                "Time": 10
+              }
+            ]
+          }
+        ],
+        "DisplayAnchoredText": [
+          {
+            "Text": "",
+            "Position": [
+              0,
+              0,
+              0
+            ],
+            "Scale": 1,
+            "BackgroundColor": [
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "Wheel": {
+          "Text": "",
+          "Icon": ""
+        }
+      }
+    ]
+  }
+}
